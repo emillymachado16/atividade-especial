@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main()
+{
+int i, j, k, tam = 3, matrizA[tam][tam], matrizB[tam][tam], matrizResul[tam][tam];
+printf("Matriz 1: \n");
+for(int i = 0; i< tam; i++){
+for(j = 0; j< tam; j++){
+printf("Elemento [%d][%d]: ", i, j);
+scanf("%d", &matrizA[i][j]);
+}
+printf("\n");
+}
+
+printf("\nMatriz 2: \n");
+for(int i = 0; i< tam; i++){
+    for(j = 0; j< tam; j++){
+        printf("Elemento [%d][%d]: ", i, j);
+        scanf("%d", &matrizB[i][j]);
+    }
+    printf("\n");
+}
+
+for(int i = 0; i<3; i++){
+    for(j = 0; j<3; j++){
+        for(k=0; k< 3; k++)
+        matrizResul[i][j] = matrizResul[i][j] + matrizA[i][k] * matrizB[k][j];
+    }
+}
+
+printf("\nMatriz Resultado: \n");
+for(int i = 0; i< tam; i++){
+    for(j = 0; j< tam; j++){
+        printf("%4d ", matrizResul[i][j]);
+    }
+    printf("\n");
+}
+
+return 0;
+}
